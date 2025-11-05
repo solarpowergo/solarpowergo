@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>SolarPowerGo — Solar Power Bank (20,000 mAh)</title>
+<meta name='description' content='Never run out of power. SolarPowerGo 20,000 mAh power bank with dual output, USB-C, and solar-assisted top-ups. Rugged, portable, eco-friendly.'>
+<link rel='icon' href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Crect width='64' height='64' rx='12' fill='%23111318'/%3E%3Ccircle cx='32' cy='32' r='18' fill='%23FF8A00'/%3E%3C/svg%3E">
+<style>
+:root{--bg:#0b0c10;--elev:#101218;--card:#12141b;--line:#1e2129;--text:#f7f7fb;--muted:#c9c9cf;--brand:#ff8a00;--brand-2:#f8c537;--ok:#10b981;}
+*{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif}
+img{max-width:100%;height:auto;display:block}.container{max-width:1140px;margin:0 auto;padding:0 20px}a{color:inherit;text-decoration:none}
+.nav{position:sticky;top:0;background:rgba(16,18,24,.7);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid var(--line);z-index:50}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:10px 0}.nav .links a{margin:0 10px;color:#d7d7dc}
+.nav .cta{padding:10px 16px;border:none;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#111;font-weight:800;cursor:pointer}
+.hero{position:relative;isolation:isolate}.hero-img{height:66vh;min-height:440px;background:linear-gradient(180deg,#0B0C10,#0F1116);border-bottom:1px solid var(--line)}
+.hero-overlay{position:absolute;inset:0;background:radial-gradient(600px 300px at 80% 20%, rgba(255,138,0,.35), transparent), radial-gradient(400px 400px at 15% 70%, rgba(0,209,255,.25), transparent)}
+.hero-content{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;width:min(96%,900px)}
+h1{font-size:clamp(32px,4vw,56px);line-height:1.05;margin:0 0 12px}.sub{color:var(--muted);max-width:760px;margin:0 auto 18px}
+.btn{padding:12px 18px;border-radius:12px;border:1px solid #2a2d36;background:#171923;color:#fff;font-weight:700;cursor:pointer}.btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#161616;border:none}
+.badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}.badges .b{padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:#141722;color:#dfe1e7;font-size:14px}
+.section{padding:56px 0;border-bottom:1px solid var(--line)}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.features .item{grid-column:span 4}.product{grid-column:span 6}.specs{grid-column:span 6}.price{display:flex;align-items:center;gap:12px;margin:10px 0 6px}
+.price .now{font-size:30px;font-weight:900}.price .old{color:#9aa1ad;text-decoration:line-through}.ksp{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
+.ksp .pill{border:1px solid var(--line);background:#151823;border-radius:10px;padding:10px 12px;color:#dfe1e7}.paybadges{display:flex;gap:10px;flex-wrap:wrap;color:#b8bec9;font-size:13px;margin-top:10px}
+.cta-bar{position:sticky;bottom:0;background:rgba(16,18,24,.92);backdrop-filter:saturate(160%) blur(10px);border-top:1px solid var(--line);padding:10px 0;z-index:60}.cta-bar-inner{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq .row{border-bottom:1px solid var(--line)}.faq .q{cursor:pointer;padding:16px;font-weight:700}.faq .a{display:none;padding:0 16px 16px;color:#d6d9e0}.show .a{display:block}
+.footer{padding:40px 0;color:#a9afba}.footer a{color:#dfe1e7}.small{font-size:13px;color:#9aa1ad}
+@media (max-width:960px){.features .item{grid-column:span 6}.product,.specs{grid-column:span 12}.ksp{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.features .item{grid-column:span 12}.ksp{grid-template-columns:1fr}.nav .links{display:none}}
+.product-inline{width:100%;aspect-ratio:5/4;border-radius:16px;border:1px solid var(--line);
+background:linear-gradient(0deg, rgba(0,0,0,0.08), rgba(0,0,0,0.08)), radial-gradient(600px 300px at 75% 20%, rgba(255,138,0,.15), transparent), radial-gradient(400px 400px at 15% 70%, rgba(14,165,233,.12), transparent), linear-gradient(135deg, #1E2129, #0B0C10);
+display:flex;align-items:flex-end;justify-content:center;color:#E5E7EB;font-weight:800;letter-spacing:.2px;padding-bottom:16px}
+.logo-inline{display:inline-flex;gap:10px;align-items:center}.logo-dot{width:18px;height:18px;border-radius:50%;background:#ff8a00;display:inline-block}
+</style>
+</head>
+<body>
+<nav class='nav'><div class='container nav-inner'>
+  <div class='logo-inline'><span class='logo-dot'></span><strong>SolarPowerGo</strong></div>
+  <div class='links'>
+    <a href='#features'>Features</a><a href='#product'>Product</a><a href='#faq'>FAQ</a><a href='#support'>Support</a>
+  </div>
+  <button class='cta' data-buy data-checkout-url=''>Buy Now</button>
+</div></nav>
+
+<header class='hero' role='banner'>
+  <div class='hero-img' aria-hidden='true'></div>
+  <div class='hero-overlay'></div>
+  <div class='hero-content'>
+    <h1>Never run out of power — even off the grid.</h1>
+    <p class='sub'>20,000 mAh solar power bank with dual output and USB-C. Rugged, portable, and eco-friendly — from campus to campsite.</p>
+    <div style='display:flex;gap:12px;justify-content:center;flex-wrap:wrap'>
+      <button class='btn primary' data-buy data-checkout-url=''>Get SolarPowerGo</button>
+      <a class='btn' href='#features'>See Features</a>
+    </div>
+    <div class='badges' aria-label='Key highlights'>
+      <div class='b'>⚡ Fast-charge</div><div class='b'>☀️ Solar-assist</div><div class='b'>🌍 Travel-ready</div><div class='b'>🔋 20,000 mAh</div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id='features' class='section'><div class='container'>
+  <h2 style='margin:0 0 14px'>Why SolarPowerGo?</h2>
+  <p class='sub'>Built for students, travellers, and outdoor people who need reliable power anywhere. Charge by outlet or the sun.</p>
+  <div class='grid features'>
+    <div class='item card'><h3>☀️ Solar-Boosted Charging</h3><p>Top up using sunlight when you’re away from outlets. Essential for emergencies and off-grid days.</p></div>
+    <div class='item card'><h3>🔋 High Capacity</h3><p>20,000 mAh keeps your devices alive through long days. Multiple phone charges per cycle.</p></div>
+    <div class='item card'><h3>⚡ Dual Output + USB-C</h3><p>Charge two devices at once. USB-C input/output for modern phones and accessories.</p></div>
+    <div class='item card'><h3>🧭 Rugged & Portable</h3><p>Tough shell, compact form factor. Toss it in your backpack for class, work, or trails.</p></div>
+    <div class='item card'><h3>🌱 Eco-friendly</h3><p>Reduce grid dependence. Harness clean solar energy and charge responsibly.</p></div>
+    <div class='item card'><h3>✅ 12-Month Warranty</h3><p>Straightforward coverage and helpful support if anything goes wrong.</p></div>
+  </div>
+</div></section>
+
+<section id='product' class='section'><div class='container'>
+  <div class='grid'>
+    <figure class='product card'><div class='product-inline'>SolarPowerGo • 20,000 mAh</div></figure>
+    <div class='specs card'>
+      <h2>SolarPowerGo — 20,000 mAh Solar Power Bank</h2>
+      <div class='price'><div class='now'>$44.99</div><div class='old'>$69.99</div><span class='b' style='padding:6px 10px;border-radius:999px;background:#142312;border:1px solid #234c2b;color:#A7F3D0;font-weight:800'>Launch Offer</span></div>
+      <p>Stay charged anywhere. Solar-assisted top-ups, dual output, USB-C, and rugged portability. From campus to campsite, never miss a moment.</p>
+      <div class='ksp'><div class='pill'>20,000 mAh</div><div class='pill'>Solar panel assist</div><div class='pill'>USB-C + USB-A</div><div class='pill'>Dual output</div><div class='pill'>Rugged shell</div><div class='pill'>12-month warranty</div></div>
+      <h3 style='margin-top:10px'>Specs</h3>
+      <ul><li>Capacity: 20,000 mAh</li><li>Input: USB-C 5V/2A</li><li>Output: USB-C & USB-A</li><li>Solar: trickle/assist panel</li><li>Weight: ~380 g</li><li>Size: ~150×75×22 mm</li></ul>
+      <div style='margin-top:16px;display:flex;gap:10px;flex-wrap:wrap'>
+        <button class='btn primary' data-buy data-checkout-url=''>Add to Cart</button>
+        <a href='#faq' class='btn'>FAQ</a><a href='#support' class='btn'>Shipping & Warranty</a>
+      </div>
+      <div class='paybadges'><span>💳 Visa</span><span>💳 MasterCard</span><span>🅿️ PayPal</span><span>🏦 Payoneer</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class='section'><div class='container'><div class='card'>
+  <h2>What makes SolarPowerGo different?</h2>
+  <p>Most power banks die when you need them most. SolarPowerGo gives you an emergency boost from sunlight, higher capacity for long days, and modern ports for faster, smarter charging — backed by a 12-month warranty and responsive support.</p>
+</div></div></section>
+
+<section id='faq' class='section faq'><div class='container'>
+  <h2>FAQ</h2>
+  <div class='card row'><div class='q'>Does the solar panel charge the bank fully?</div><div class='a'>The integrated panel provides a helpful top-up in sun. For fastest full charges, use a wall adapter via USB-C. Solar keeps you going when outlets aren’t available.</div></div>
+  <div class='card row'><div class='q'>Is it allowed on airplanes?</div><div class='a'>Most airlines allow power banks up to 100Wh (≈27,000 mAh @3.7V) in carry-on. At 20,000 mAh you’re typically within limits. Always check your airline’s latest policy.</div></div>
+  <div class='card row'><div class='q'>Warranty & returns?</div><div class='a'>12-month limited warranty for manufacturing defects. 30-day returns if unused and in original packaging.</div></div>
+  <div class='card row'><div class='q'>Shipping times?</div><div class='a'>Typical delivery: EU & Gulf 5–10 business days (supplier dependent). You’ll receive tracking via email/SMS.</div></div>
+</div></section>
+
+<section id='support' class='section'><div class='container'><div class='grid'>
+  <div class='card' style='grid-column:span 6'><h3>Shipping</h3><p>We currently ship to the EU and Gulf region with tracked delivery (5–10 business days). Customs/VAT may apply per destination law.</p></div>
+  <div class='card' style='grid-column:span 6'><h3>Warranty</h3><p>12-month limited warranty. If you experience an issue, contact support and we’ll help with troubleshooting, replacement, or refund per policy.</p></div>
+  <div class='card' style='grid-column:span 12'><h3>Contact</h3><p>Email: support@solarpowergo.com (placeholder). Add WhatsApp/Instagram once your handles are live.</p></div>
+</div></div></section>
+</main>
+
+<div class='cta-bar' role='complementary'><div class='container cta-bar-inner'>
+  <div><strong>SolarPowerGo</strong> — launch price <strong>$44.99</strong></div>
+  <button class='btn primary' data-buy data-checkout-url=''>Buy Now</button>
+</div></div>
+
+<footer class='footer'><div class='container' style='display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap'>
+  <div>© <span id='y'></span> SolarPowerGo</div><div class='small'><a href='#'>Privacy</a> · <a href='#'>Terms</a> · <a href='#support'>Support</a></div>
+</div></footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click', e=>{const id=a.getAttribute('href').slice(1);const el=document.getElementById(id);if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'});}});
+});
+document.querySelectorAll('.faq .row').forEach(row=>{row.querySelector('.q').addEventListener('click', ()=> row.classList.toggle('show'));});
+const CHECKOUT_URL = localStorage.getItem('spg_checkout_url') || '';
+document.querySelectorAll('[data-buy]').forEach(btn=>{
+  btn.addEventListener('click', ()=>{const url = CHECKOUT_URL || btn.getAttribute('data-checkout-url') || ''; if(url){location.href=url;} else { alert('👋 Add your Shopify Checkout URL first: tap the “⚙️ Setup” bubble (bottom-right).'); }});
+});
+const panel = document.createElement('div'); panel.style.position='fixed'; panel.style.right='16px'; panel.style.bottom='88px'; panel.style.background='#12141b'; panel.style.border='1px solid #1e2129'; panel.style.borderRadius='12px'; panel.style.padding='12px'; panel.style.width='min(92vw,360px)'; panel.style.boxShadow='0 6px 24px rgba(0,0,0,.35)'; panel.style.display='none'; panel.style.zIndex='99';
+panel.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:6px"><strong>SolarPowerGo Setup</strong><button id="spg-close" style="background:#1a1d26;border:1px solid #262a35;color:#dfe1e7;border-radius:8px;padding:4px 8px;cursor:pointer">✖</button></div><label class="small">Paste your Shopify Checkout (or product) URL:</label><input id="spg-input" style="width:100%;margin-top:8px;background:#0f1116;color:#fff;border:1px solid #20232c;border-radius:10px;padding:10px" placeholder="https://yourstore.myshopify.com/cart/..."><div style="display:flex;gap:8px;margin-top:10px"><button id="spg-save" class="btn primary" style="flex:1">Save</button><button id="spg-test" class="btn" style="flex:1">Test Buy</button></div><p class="small" style="margin-top:10px">Saved locally on this device. Share the live site with the URL embedded once you deploy.</p>`;
+document.body.appendChild(panel);
+const fab = document.createElement('button'); fab.textContent='⚙️ Setup'; fab.style.position='fixed'; fab.style.right='16px'; fab.style.bottom='16px'; fab.style.padding='12px 14px'; fab.style.borderRadius='999px'; fab.style.border='1px solid #262a35'; fab.style.background='#141722'; fab.style.color='#fff'; fab.style.fontWeight='800'; fab.style.cursor='pointer'; fab.style.zIndex='98'; document.body.appendChild(fab);
+fab.addEventListener('click', ()=>{const input = panel.querySelector('#spg-input'); input.value = localStorage.getItem('spg_checkout_url') || ''; panel.style.display='block';});
+panel.querySelector('#spg-close').addEventListener('click', ()=> panel.style.display='none');
+panel.querySelector('#spg-save').addEventListener('click', ()=>{const val = panel.querySelector('#spg-input').value.trim(); if(!val){ alert('Please paste a valid checkout URL.'); return; } localStorage.setItem('spg_checkout_url', val); alert('Saved! All Buy buttons will now go to your checkout.');});
+panel.querySelector('#spg-test').addEventListener('click', ()=>{const val = panel.querySelector('#spg-input').value.trim() || localStorage.getItem('spg_checkout_url'); if(!val){ alert('Add a checkout URL first.'); return; } location.href=val;});
+document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+</body></html>
