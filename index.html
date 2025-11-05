@@ -3,81 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SolarPowerGo — Solar Power Bank</title>
-  <meta name="description" content="Premium 20,000 mAh solar power bank with dual output and USB-C. Designed for students, travellers, and outdoor life.">
+  <title>SolarPowerGo</title>
   <style>
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #fffef9;
+      background-color: #fff;
       color: #111;
       text-align: center;
     }
-
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 10%;
-      background-color: white;
+      background-color: #fff;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
-
-    .logo {
+    header h1 {
       font-size: 1.4em;
       font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .logo::before {
-      content: "☀️";
-      font-size: 1.3em;
-    }
-
-    .buy-btn {
-      background: #d4af37;
       color: #111;
-      font-weight: 600;
-      padding: 10px 20px;
-      border-radius: 6px;
-      text-decoration: none;
     }
-
-    .hero {
-      padding: 60px 10%;
-    }
-
-    .hero h1 {
-      font-size: 2.2em;
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 1.1em;
-      color: #555;
-      margin-bottom: 30px;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
     .btn-primary {
-      background: #d4af37;
+      background-color: #d4af37;
+      border: none;
       color: #111;
       padding: 12px 22px;
       text-decoration: none;
       border-radius: 8px;
       font-weight: 600;
     }
-
     .btn-secondary {
       border: 2px solid #111;
       color: #111;
@@ -86,18 +43,30 @@
       border-radius: 8px;
       font-weight: 600;
     }
-
+    .hero {
+      padding: 60px 10%;
+      text-align: left;
+      max-width: 800px;
+      margin: auto;
+    }
+    .hero h2 {
+      font-size: 2.5em;
+      font-weight: 800;
+    }
+    .hero p {
+      font-size: 1.1em;
+      color: #555;
+      margin: 20px 0 30px;
+    }
     .hero-image {
       margin-top: 30px;
     }
-
     .hero-image img {
       width: 100%;
       max-width: 800px;
       border-radius: 16px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-
     footer {
       margin-top: 80px;
       padding: 30px;
@@ -105,7 +74,6 @@
       font-size: 0.9em;
       color: #555;
     }
-
     footer a {
       color: #d4af37;
       text-decoration: none;
@@ -116,29 +84,23 @@
 <body>
 
   <header>
-    <div class="logo">SolarPowerGo</div>
-    <a href="#" class="buy-btn">Buy Now</a>
+    <h1>🌞 SolarPowerGo</h1>
+    <a href="#" class="btn-primary">Buy Now</a>
   </header>
 
   <section class="hero">
-    <h1>Never run out of power — anywhere.</h1>
+    <h2>Never run out of power — anywhere.</h2>
     <p>Premium 20,000 mAh solar power bank with dual output and USB-C. Clean design for students, travellers, and outdoor life.</p>
-
-    <div class="buttons">
-      <a href="#" class="btn-primary">Get SolarPower Go</a>
-      <a href="#" class="btn-secondary">See Product</a>
-    </div>
+    <a href="#" class="btn-primary">Get SolarPower Go</a>
+    <a href="#" class="btn-secondary">See Product</a>
 
     <div class="hero-image">
-      <img src="hero.jpg" alt="SolarPowerGo solar power bank on wooden table under sunlight">
+      <img src="hero.jpg" alt="SolarPowerGo Power Bank">
     </div>
   </section>
 
   <footer>
-    &copy; 2025 SolarPowerGo. All rights reserved. |
-    <a href="#">Privacy</a> ·
-    <a href="#">Terms</a> ·
-    <a href="#">Support</a>
+    <p>© 2025 SolarPowerGo. All rights reserved. | <a href="#">Terms</a> | <a href="#">Support</a></p>
   </footer>
 
 </body>
