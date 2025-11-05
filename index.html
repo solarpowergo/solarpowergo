@@ -1,421 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- =========================
-       SolarPowerGo — Landing Page
-       One-file, production-ready, mobile-first.
-       Drop into GitHub Pages as index.html
-       ========================== -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SolarPowerGo — 20,000 mAh Solar Power Bank</title>
-  <meta name="description" content="Never run out of power — anywhere. Premium 20,000 mAh solar power bank with dual output and USB-C. Clean design for students, travellers, and outdoor life.">
-  <meta name="theme-color" content="#111111">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SolarPowerGo — Solar Power Bank</title>
+<meta name="description" content="Premium 20,000 mAh solar power bank with dual USB output and USB-C. Designed for travellers, students, and outdoor life.">
+<style>
+  :root {
+    --gold: #d4af37;
+    --dark: #0b0c10;
+    --light: #f8f8f8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--light);
+    color: #111;
+    line-height: 1.6;
+    text-align: center;
+    scroll-behavior: smooth;
+  }
 
-  <!-- Favico (SVG data URI, lightweight) -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect rx='12' width='64' height='64' fill='%23ffffff'/%3E%3Ccircle cx='32' cy='32' r='16' fill='%23d4af37'/%3E%3C/svg%3E">
+  header {
+    background: var(--dark);
+    color: white;
+    padding: 20px 0;
+    font-weight: 700;
+    font-size: 1.3em;
+    letter-spacing: 0.5px;
+  }
 
-  <style>
-    /* =========================
-       Design tokens
-       ========================== */
-    :root{
-      --bg:#ffffff;
-      --ink:#0b0c10;
-      --muted:#5d6470;
-      --line:#eceef3;
-      --soft:#f8f9fb;
-      --gold:#d4af37;
-      --gold-2:#e6cb73;
-      --ok:#127c39;
-      --warn:#b2450e;
-      --shadow:0 8px 30px rgba(0,0,0,.06);
-      --radius:16px;
-      --radius-sm:10px;
-      --max:1200px;
-    }
+  .hero {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: auto;
+  }
 
-    /* Reset / base */
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      color:var(--ink);
-      background:var(--bg);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
-    a{color:inherit}
-    img{max-width:100%;display:block;height:auto}
+  .hero h1 {
+    font-size: 2.4em;
+    margin-bottom: 20px;
+  }
 
-    .container{max-width:var(--max);margin:0 auto;padding:0 18px}
-    .section{padding:60px 0;border-bottom:1px solid var(--line)}
-    .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
-    .grid{display:grid;gap:22px}
-    .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:#fff}
-    .badge{background:#f4f7ed;color:#0d6d2d;border:1px solid #dbe8d3}
-    .muted{color:var(--muted)}
-    .visually-hidden{position:absolute;left:-9999px}
+  .hero p {
+    color: #555;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+  }
 
-    /* =========================
-       Nav
-       ========================== */
-    .nav{
-      position:sticky;top:0;z-index:50;
-      background:rgba(255,255,255,.85);
-      backdrop-filter:saturate(160%) blur(10px);
-      border-bottom:1px solid var(--line);
-    }
-    .nav-in{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-    .brand{display:flex;gap:10px;align-items:center;font-weight:900;letter-spacing:.2px}
-    .brand-dot{width:18px;height:18px;border-radius:50%;
-      background:radial-gradient(circle at 30% 30%, var(--gold-2), var(--gold));
-      border:1px solid #b0922c
-    }
-    .cta{
-      appearance:none;border:0;cursor:pointer;
-      padding:10px 16px;border-radius:999px;
-      background:linear-gradient(135deg,var(--gold),var(--gold-2));
-      color:#111;font-weight:800;box-shadow:var(--shadow)
-    }
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: #111;
+  }
+  .btn-secondary {
+    border: 2px solid #111;
+    color: #111;
+  }
+  .btn:hover { opacity: 0.85; }
 
-    /* =========================
-       Hero
-       ========================== */
-    .hero{padding:56px 0}
-    .hero-grid{
-      display:grid;gap:22px;align-items:center;
-      grid-template-columns:1.05fr .95fr;
-    }
-    h1{font-size:clamp(32px,5vw,56px);line-height:1.05;margin:0 0 12px}
-    .lead{color:var(--muted);font-size:clamp(16px,2.1vw,20px);max-width:640px}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      gap:8px;padding:12px 18px;border-radius:12px;font-weight:700;cursor:pointer;text-decoration:none
-    }
-    .btn.primary{background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#17130a;border:none}
-    .btn.ghost{border:1px solid #ccd1da;background:#fff}
-    .frame{position:relative;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff}
-    .frame .ph{
-      position:absolute;inset:0;display:grid;place-items:center;
-      background:repeating-linear-gradient(135deg,#f6f6f8 0 14px,#f0f1f5 14px 28px);
-      color:#9aa2ad;font-weight:700;letter-spacing:.08em
-    }
-    .caption{font-size:13px;color:#8991a0;margin-top:8px}
+  .hero-image {
+    margin-top: 40px;
+  }
+  .hero-image img {
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    animation: fadeIn 1s ease-in;
+  }
 
-    /* =========================
-       Features
-       ========================== */
-    .features .grid{grid-template-columns:repeat(3,1fr)}
-    .feat{padding:20px;border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--soft)}
-    .feat h3{margin:4px 0 8px;font-size:18px}
-    .feat p{margin:0;color:var(--muted)}
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
-    /* =========================
-       Product + Gallery
-       ========================== */
-    .product-grid{grid-template-columns:1fr 1fr}
-    .price{display:flex;align-items:center;gap:12px;margin:10px 0}
-    .now{font-size:28px;font-weight:900}
-    .old{color:#9aa1ad;text-decoration:line-through}
-    .pay{display:flex;gap:10px;flex-wrap:wrap;color:#444;font-size:14px}
+  .gallery {
+    margin: 80px auto;
+    max-width: 1100px;
+    display: grid;
+    gap: 24px;
+  }
+  .gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    animation: fadeIn 1.5s ease;
+  }
 
-    .gallery{grid-template-columns:repeat(3,1fr)}
-    .gallery .frame{aspect-ratio:4/3}
-
-    /* =========================
-       Specs
-       ========================== */
-    .specs-grid{grid-template-columns:repeat(4,1fr)}
-    .spec{padding:16px;border:1px solid var(--line);border-radius:12px;background:#fff}
-    .spec b{display:block;font-size:14px;margin-bottom:4px}
-    .spec span{color:var(--muted);font-size:13px}
-
-    /* =========================
-       Testimonials
-       ========================== */
-    .testis{grid-template-columns:repeat(3,1fr)}
-    .q{padding:20px;border:1px solid var(--line);border-radius:var(--radius);background:#fff}
-    .stars{color:#f0b90b;margin-bottom:6px}
-
-    /* =========================
-       FAQ
-       ========================== */
-    details{border:1px solid var(--line);border-radius:12px;background:#fff;padding:14px 16px}
-    details+details{margin-top:10px}
-    summary{cursor:pointer;font-weight:700}
-    summary::-webkit-details-marker{display:none}
-
-    /* =========================
-       Footer
-       ========================== */
-    footer{padding:40px 0;color:#6b7280}
-    footer .row{display:flex;gap:18px;justify-content:space-between;flex-wrap:wrap;align-items:center}
-    .links{display:flex;gap:14px;flex-wrap:wrap}
-    .links a{color:#6b7280;text-decoration:none}
-    .links a:hover{text-decoration:underline}
-
-    /* =========================
-       Responsive
-       ========================== */
-    @media (max-width:980px){
-      .hero-grid{grid-template-columns:1fr}
-      .features .grid{grid-template-columns:1fr 1fr}
-      .product-grid{grid-template-columns:1fr}
-      .specs-grid{grid-template-columns:1fr 1fr}
-      .testis{grid-template-columns:1fr}
-      .gallery{grid-template-columns:1fr 1fr}
-    }
-    @media (max-width:560px){
-      .features .grid{grid-template-columns:1fr}
-      .gallery{grid-template-columns:1fr}
-    }
-  </style>
+  footer {
+    background: #101010;
+    color: #aaa;
+    padding: 40px 20px;
+    font-size: 0.9em;
+  }
+  footer a {
+    color: var(--gold);
+    text-decoration: none;
+    margin: 0 6px;
+  }
+</style>
 </head>
 <body>
 
-  <!-- ============ NAV ============ -->
-  <nav class="nav">
-    <div class="container nav-in">
-      <div class="brand">
-        <span class="brand-dot"></span>
-        <span>SolarPowerGo</span>
-      </div>
-      <button class="cta" onclick="scrollToId('buy')">Buy Now</button>
-    </div>
-  </nav>
+<header>☀️ SolarPowerGo</header>
 
-  <!-- ============ HERO ============ -->
-  <header class="section hero">
-    <div class="container hero-grid">
-      <div>
-        <h1>Never run out of power — anywhere.</h1>
-        <p class="lead">Premium <b>20,000 mAh</b> solar power bank with dual output and USB-C. Clean design for students, travellers, and outdoor life.</p>
-        <div class="actions">
-          <a class="btn primary" href="#buy">Get SolarPowerGo</a>
-          <a class="btn ghost" href="#product">See Product</a>
-        </div>
-        <p class="caption">💡 Tip: upload <code>hero.jpg</code> next to <code>index.html</code>. If missing, a placeholder shows.</p>
-      </div>
+<section class="hero">
+  <h1>Never run out of power — anywhere.</h1>
+  <p>Premium 20,000 mAh solar power bank with dual output and USB-C. Clean design for students, travellers, and outdoor life.</p>
+  <a href="#" class="btn btn-primary">Get SolarPowerGo</a>
+  <a href="#" class="btn btn-secondary">See Product</a>
 
-      <!-- Image with JPG/PNG auto fallback and graceful placeholder -->
-      <figure class="frame">
-        <picture>
-          <source srcset="hero.png" type="image/png">
-          <source srcset="hero.jpg" type="image/jpeg">
-          <img id="heroImage" src="hero.jpg" alt="SolarPowerGo charging a phone on an outdoor table">
-        </picture>
-        <div id="heroPh" class="ph" aria-hidden="true">HERO IMAGE</div>
-      </figure>
-    </div>
-  </header>
+  <div class="hero-image">
+    <img src="hero.jpg" alt="SolarPowerGo charging phone under sunlight">
+  </div>
+</section>
 
-  <!-- ============ FEATURES ============ -->
-  <section class="section features">
-    <div class="container">
-      <div class="pill badge">Launch Offer · Save 35%</div>
-      <h2 style="margin:12px 0 20px">Why SolarPowerGo?</h2>
-      <div class="grid">
-        <div class="feat">
-          <h3>Solar assist panel</h3>
-          <p>Top-up in sunlight anywhere — campus, beach, or campsite.</p>
-        </div>
-        <div class="feat">
-          <h3>USB-C + USB-A</h3>
-          <p>Charge two devices at once with smart power delivery.</p>
-        </div>
-        <div class="feat">
-          <h3>Rugged shell</h3>
-          <p>Travel-proof build with 12-month limited warranty.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="gallery">
+  <img src="closeup.jpg" alt="SolarPowerGo close-up view">
+  <img src="outdoor.jpg" alt="SolarPowerGo outdoor scene">
+</section>
 
-  <!-- ============ PRODUCT ============ -->
-  <section id="product" class="section">
-    <div class="container">
-      <div class="grid product-grid">
-        <figure class="frame">
-          <picture>
-            <source srcset="outdoor.png" type="image/png">
-            <source srcset="outdoor.jpg" type="image/jpeg">
-            <img id="outdoorImage" src="outdoor.jpg" alt="Solar power bank in sunlight next to a backpack">
-          </picture>
-          <div id="outdoorPh" class="ph">OUTDOOR IMAGE</div>
-        </figure>
+<footer>
+  <p>© 2025 SolarPowerGo • All rights reserved<br>
+  <a href="#">Privacy</a> · <a href="#">Support</a></p>
+</footer>
 
-        <div class="card" style="padding:22px">
-          <h2>SolarPowerGo — 20,000 mAh Solar Power Bank</h2>
-          <div class="price">
-            <div class="now">$44.99</div>
-            <div class="old">$69.99</div>
-            <span class="pill badge">Launch Deal</span>
-          </div>
-          <p class="muted">Solar-assisted top-ups, dual output, USB-C input/output, LED level indicator, and rugged portability — from campus to campsite.</p>
-          <ul style="text-align:left;line-height:1.7;margin:12px 0 0 18px;color:#333">
-            <li>Cell capacity: 20,000 mAh (74Wh class)</li>
-            <li>USB-C PD input/output + USB-A quick charge</li>
-            <li>Solar panel assist (top-up in sunlight)</li>
-            <li>Dual-device charging</li>
-          </ul>
-          <div class="actions" style="margin-top:16px">
-            <a class="btn primary" href="#buy">Add to Cart</a>
-            <a class="btn ghost" href="#faq">FAQ</a>
-          </div>
-          <p class="pay" style="margin-top:12px">💳 Visa · 💳 MasterCard · 🅿️ PayPal · 🏦 Payoneer</p>
-        </div>
-      </div>
-
-      <!-- Gallery -->
-      <div class="grid gallery" style="margin-top:22px">
-        <figure class="frame">
-          <picture>
-            <source srcset="closeup.png" type="image/png">
-            <source srcset="closeup.jpg" type="image/jpeg">
-            <img id="closeupImage" src="closeup.jpg" alt="Close-up of SolarPowerGo solar panel and USB ports">
-          </picture>
-          <div id="closeupPh" class="ph">CLOSE-UP</div>
-        </figure>
-
-        <figure class="frame">
-          <picture>
-            <source srcset="hero.png" type="image/png">
-            <source srcset="hero.jpg" type="image/jpeg">
-            <img src="hero.jpg" alt="Hero perspective of SolarPowerGo">
-          </picture>
-          <div class="ph">HERO ALT</div>
-        </figure>
-
-        <figure class="frame">
-          <picture>
-            <source srcset="outdoor.png" type="image/png">
-            <source srcset="outdoor.jpg" type="image/jpeg">
-            <img src="outdoor.jpg" alt="Outdoor lifestyle shot">
-          </picture>
-          <div class="ph">LIFESTYLE</div>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SPECS ============ -->
-  <section class="section" style="background:var(--soft)">
-    <div class="container">
-      <h2>Tech Specs</h2>
-      <div class="grid specs-grid" style="margin-top:16px">
-        <div class="spec"><b>Capacity</b><span>20,000 mAh (approx. 74Wh)</span></div>
-        <div class="spec"><b>Inputs</b><span>USB-C PD (up to 18W)</span></div>
-        <div class="spec"><b>Outputs</b><span>USB-C PD + USB-A QC</span></div>
-        <div class="spec"><b>Solar panel</b><span>Assist charging in sunlight</span></div>
-        <div class="spec"><b>Size</b><span>~ 152 × 76 × 22 mm</span></div>
-        <div class="spec"><b>Weight</b><span>~ 380 g</span></div>
-        <div class="spec"><b>Shell</b><span>Impact-resistant polymer</span></div>
-        <div class="spec"><b>Warranty</b><span>12-month limited</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ BUY ============ -->
-  <section id="buy" class="section">
-    <div class="container">
-      <div class="card" style="padding:22px;display:grid;gap:14px;justify-items:center">
-        <div class="pill badge">In stock · Ships 24–48h</div>
-        <h2 style="margin:0">Get SolarPowerGo</h2>
-        <p class="muted" style="margin:0">Free returns within 30 days if unused and in original packaging.</p>
-        <div class="price"><div class="now" aria-label="price now">$44.99</div><div class="old">$69.99</div></div>
-        <a class="btn primary" href="#">Checkout</a>
-        <p class="pay">🔒 Secure checkout · 💳 Card/PayPal/Payoneer</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ TESTIMONIALS ============ -->
-  <section class="section" style="background:var(--soft)">
-    <div class="container">
-      <h2>Loved by travellers & students</h2>
-      <div class="grid testis" style="margin-top:16px">
-        <blockquote class="q">
-          <div class="stars">★★★★★</div>
-          “Took it on a 3-day hiking trip. Solar top-ups kept my phone alive. Solid build.”
-          <footer class="muted" style="margin-top:8px">— Samir • Tripoli</footer>
-        </blockquote>
-        <blockquote class="q">
-          <div class="stars">★★★★★</div>
-          “USB-C fast charges my phone and earbuds together. Perfect daily carry.”
-          <footer class="muted" style="margin-top:8px">— Rania • Beirut</footer>
-        </blockquote>
-        <blockquote class="q">
-          <div class="stars">★★★★★</div>
-          “Looks minimal, works great. Exactly what I needed for campus.”
-          <footer class="muted" style="margin-top:8px">— Ali • Saida</footer>
-        </blockquote>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FAQ ============ -->
-  <section id="faq" class="section">
-    <div class="container">
-      <h2>FAQ</h2>
-      <details>
-        <summary>Can the solar panel fully charge the bank?</summary>
-        <p class="muted">The panel provides a helpful top-up in sun. For fastest full charges, use a wall adapter via USB-C.</p>
-      </details>
-      <details>
-        <summary>Is it allowed in airplanes?</summary>
-        <p class="muted">Most airlines allow up to ~100Wh in carry-on (20,000 mAh ≈ 74Wh at 3.7V), which is typically within limits.</p>
-      </details>
-      <details>
-        <summary>Warranty & returns</summary>
-        <p class="muted">12-month limited warranty against manufacturing defects. 30-day returns if unused and in original packaging.</p>
-      </details>
-    </div>
-  </section>
-
-  <!-- ============ FOOTER ============ -->
-  <footer>
-    <div class="container row">
-      <div>© <span id="y"></span> SolarPowerGo</div>
-      <div class="links">
-        <a href="#faq">Support</a>
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ============ JS (small, no deps) ============ -->
-  <script>
-    // Year
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Scroll helper
-    function scrollToId(id){
-      const el = document.getElementById(id);
-      if(el){ el.scrollIntoView({behavior:'smooth'}) }
-    }
-
-    // Graceful image placeholders: if real image loads, hide the overlay.
-    function bindPh(imgId, phId){
-      const img = document.getElementById(imgId);
-      const ph  = document.getElementById(phId);
-      if(!img || !ph) return;
-      const hide = ()=> ph.style.display='none';
-      const show = ()=> ph.style.display='grid';
-      // If it loads, hide placeholder
-      img.addEventListener('load', hide);
-      // If it errors, keep placeholder
-      img.addEventListener('error', show);
-      // Kick: if cached success, hide immediately
-      if(img.complete && img.naturalWidth>0){ hide(); }
-    }
-
-    bindPh('heroImage','heroPh');
-    bindPh('outdoorImage','outdoorPh');
-    bindPh('closeupImage','closeupPh');
-  </script>
 </body>
 </html>
